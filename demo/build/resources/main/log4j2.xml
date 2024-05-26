@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+
+      <PatternLayout>
+        <Pattern>{%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} traceId: %mdc{trace_id} spanId:
+          %mdc{span_id} amzn-trace-id: %X{AWS-XRAY-TRACE-ID} - %msg%n}
+        </Pattern>
+      </PatternLayout>
+      <!--            <PatternLayout pattern="%msg%n"/>-->
+
+      <!--      <PatternLayout>-->
+      <!--        <Pattern>{trace_id=%X{trace_id} span_id=%X{span_id} trace_flags=%X{trace_flags} %5p}</Pattern>-->
+      <!--      </PatternLayout>-->
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="DEBUG">
+      <AppenderRef ref="Console"/>
+    </Root>
+  </Loggers>
+</Configuration>
